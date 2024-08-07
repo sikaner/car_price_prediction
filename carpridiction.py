@@ -1,12 +1,11 @@
 import streamlit as st
-import pickle 
+import pickle as pk
 import numpy as np
 import pandas as pd
 import xgboost as xgb
 
 # Load the trained model from pickle
-with open('xgb_saved', 'rb') as file:
-    model = pickle.load(file)
+model = pk.load(open('xgb_saved.pkl','rb'))
 
 # Streamlit app title
 st.title("Car Price Prediction")
@@ -21,6 +20,8 @@ transmission = st.selectbox("Transmission Type", ['Manual', 'Automatic'])
 owner = st.selectbox("Owner Type", ['First Owner', 'Second Owner', 'Third Owner', 'Fourth & Above Owner', 'Test Drive Car'])
 mileage = st.number_input("Mileage (kmpl)", min_value=0.0, max_value=50.0, value=20.0)
 engine = st.number_input("Engine Capacity (CC)", min_value=500, max_value=5000, value=1500)
+max_power = st.number_input("Max power  (CC)", min_value=500, max_value=5000, value=1500)
+
 
 # Create input dataframe
 input_data = {
@@ -33,6 +34,7 @@ input_data = {
     'owner': owner,
     'mileage': mileage,
     'engine': engine,
+    'max_power': max_power
 }
 
 input_df = pd.DataFrame([input_data])
