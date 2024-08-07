@@ -12,16 +12,17 @@ st.title("Car Price Prediction")
 cars_data = pd.read_csv('Cardetails.csv')
 
 # User input fields
-year = st.number_input("Year of Manufacture", min_value=1900, max_value=2024, value=2015)
 name = st.selectbox("Name of the car", ['Ford', 'City', 'Mercides', 'toyata', 'cultus'])
+year = st.number_input("Year of Manufacture", min_value=1900, max_value=2024, value=2015)
 km_driven = st.number_input("Kilometers Driven", min_value=0, max_value=1000000, value=50000)
 fuel = st.selectbox("Fuel Type", ['Petrol', 'Diesel', 'CNG', 'LPG', 'Electric'])
 seller_type = st.selectbox("Seller Type", ['Individual', 'Dealer', 'Trustmark Dealer'])
 transmission = st.selectbox("Transmission Type", ['Manual', 'Automatic'])
 owner = st.selectbox("Owner Type", ['First Owner', 'Second Owner', 'Third Owner', 'Fourth & Above Owner', 'Test Drive Car'])
-mileage = st.number_input("Mileage (kmpl)", min_value=0.0, max_value=50.0, value=20.0)
 engine = st.number_input("Engine Capacity (CC)", min_value=500, max_value=5000, value=1500)
+mileage = st.number_input("Mileage (kmpl)", min_value=0.0, max_value=50.0, value=20.0)
 max_power = st.number_input("Max power  (CC)", min_value=500, max_value=5000, value=1500)
+seats = st.number_input("Seats", min_value=0, max_value=7, value=7)
 
 
 # Create input dataframe
