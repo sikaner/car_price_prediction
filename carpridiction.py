@@ -9,6 +9,7 @@ model = pk.load(open('xgb_saved.pkl','rb'))
 
 # Streamlit app title
 st.title("Car Price Prediction")
+cars_data = pd.read_csv('Cardetails.csv')
 
 # User input fields
 year = st.number_input("Year of Manufacture", min_value=1900, max_value=2024, value=2015)
