@@ -11,6 +11,11 @@ model = pk.load(open('xgb_saved.pkl','rb'))
 st.title("Car Price Prediction")
 cars_data = pd.read_csv('Cardetails.csv')
 
+def get_brand_name(car_name):
+    car_name = car_name.split(' ')[0]
+    return car_name.strip()
+cars_data['name'] = cars_data['name'].apply(get_brand_name)
+
 # User input fields
 name = st.selectbox("Name of the car", ['Ford', 'City', 'Mercides', 'toyata', 'cultus'])
 year = st.number_input("Year of Manufacture", min_value=1900, max_value=2024, value=2015)
