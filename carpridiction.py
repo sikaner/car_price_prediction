@@ -27,16 +27,17 @@ seats = st.number_input("Seats", min_value=0, max_value=7, value=7)
 
 # Create input dataframe
 input_data = {
-    'year': year,
-    'name': name,
-    'km_driven': km_driven,
-    'fuel': fuel,
-    'seller_type': seller_type,
-    'transmission': transmission,
-    'owner': owner,
-    'mileage': mileage,
-    'engine': engine,
-    'max_power': max_power
+    'name':name,
+    'year':year,
+    'km_driven':km_driven,
+    'fuel':fuel,
+    'seller_type':seller_type,
+    'transmission':transmission,
+    'owner':owner,
+    'engine':engine,
+    'mileage':mileage,
+    'max_power':max_power,
+    'seats':seats,
 }
 
 input_df = pd.DataFrame([input_data])
